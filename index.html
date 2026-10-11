@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furniture Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Custom furniture studio</p>
+          <h1>Furniture Builder Planner</h1>
+        </div>
+      </header>
+
+      <main class="app-grid">
+        <section class="panel config-panel">
+          <h2>Design your piece</h2>
+
+          <div class="field-group">
+            <label for="furnitureType">Furniture type</label>
+            <select id="furnitureType">
+              <option value="desk">Study Desk</option>
+              <option value="bookshelf">Bookshelf</option>
+              <option value="table">Dining Table</option>
+              <option value="wardrobe">Wardrobe</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="material">Board material</label>
+            <select id="material">
+              <option value="pine">Pine Wood</option>
+              <option value="oak">Oak Wood</option>
+              <option value="walnut">Walnut Wood</option>
+              <option value="mdf">Premium MDF</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label>Board color</label>
+            <div class="color-options" id="colorOptions">
+              <button class="color-swatch active" data-color="#8d6e63" data-name="Walnut Brown" type="button" style="--swatch:#8d6e63" title="Walnut Brown"></button>
+              <button class="color-swatch" data-color="#d7a86e" data-name="Honey Oak" type="button" style="--swatch:#d7a86e" title="Honey Oak"></button>
+              <button class="color-swatch" data-color="#6d7f6d" data-name="Forest Green" type="button" style="--swatch:#6d7f6d" title="Forest Green"></button>
+              <button class="color-swatch" data-color="#7697b3" data-name="Slate Blue" type="button" style="--swatch:#7697b3" title="Slate Blue"></button>
+              <button class="color-swatch" data-color="#c7c1ae" data-name="Natural Beige" type="button" style="--swatch:#c7c1ae" title="Natural Beige"></button>
+              <button class="color-swatch" data-color="#2f2f2f" data-name="Charcoal Black" type="button" style="--swatch:#2f2f2f" title="Charcoal Black"></button>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="width">Width (cm)</label>
+              <input id="width" type="number" min="20" max="300" value="120" />
+            </div>
+            <div class="field-group">
+              <label for="height">Height (cm)</label>
+              <input id="height" type="number" min="20" max="260" value="75" />
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field-group">
+              <label for="depth">Depth (cm)</label>
+              <input id="depth" type="number" min="20" max="150" value="45" />
+            </div>
+            <div class="field-group">
+              <label for="quantity">Units</label>
+              <input id="quantity" type="number" min="1" max="20" value="1" />
+            </div>
+          </div>
+
+          <div class="field-group checkbox-group">
+            <label class="checkbox-item">
+              <input id="drawerOption" type="checkbox" />
+              <span>Drawers</span>
+            </label>
+            <label class="checkbox-item">
+              <input id="shelfOption" type="checkbox" />
+              <span>Extra shelves</span>
+            </label>
+            <label class="checkbox-item">
+              <input id="finishOption" type="checkbox" />
+              <span>Premium finish</span>
+            </label>
+          </div>
+        </section>
+
+        <section class="panel preview-panel">
+          <div class="preview-card" id="previewCard">
+            <div class="mini-board" id="boardPreview"></div>
+            <div class="preview-details">
+              <div>
+                <p class="label">Selected furniture</p>
+                <h3 id="selectedFurniture">Study Desk</h3>
+              </div>
+              <div>
+                <p class="label">Board color</p>
+                <p id="selectedColor">Walnut Brown</p>
+              </div>
+              <div>
+                <p class="label">Dimensions</p>
+                <p id="dimensionsText">120 × 75 × 45 cm</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="quote-box">
+            <p class="label">Estimated quotation</p>
+            <div class="price-row">
+              <span class="currency">USD</span>
+              <strong id="totalPrice">$0</strong>
+            </div>
+            <p id="quoteSummary">Your custom quotation will appear here.</p>
+          </div>
+        </section>
+      </main>
+
+      <section class="panel details-panel">
+        <div class="instructions-box">
+          <h2>How to build</h2>
+          <ol id="buildSteps"></ol>
+        </div>
+
+        <div class="materials-box">
+          <h2>Material notes</h2>
+          <ul id="materialInfo"></ul>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

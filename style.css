@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #f4efe9;
+  --panel: #fffdfb;
+  --panel-alt: #efe5dc;
+  --accent: #b76e4c;
+  --accent-strong: #8b4b2d;
+  --text: #1e1e1e;
+  --muted: #6f6b67;
+  --line: #e9ddd3;
+  --shadow: 0 20px 50px rgba(35, 23, 18, 0.09);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fbf8f4 0%, var(--bg) 100%);
+  color: var(--text);
+}
+
+.page-shell {
+  width: min(1200px, calc(100% - 32px));
+  margin: 40px auto;
+}
+
+.topbar {
+  margin-bottom: 28px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.1rem, 3vw, 3rem);
+}
+
+h2 {
+  margin: 0 0 18px;
+  font-size: 1.5rem;
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.app-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 28px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.config-panel,
+.preview-panel {
+  min-height: 100%;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+label,
+.label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+input,
+select,
+button {
+  font: inherit;
+}
+
+input,
+select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #fff;
+  color: var(--text);
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid rgba(183, 110, 76, 0.25);
+  border-color: var(--accent);
+}
+
+.color-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.color-swatch {
+  width: 42px;
+  height: 42px;
+  border: 3px solid rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+  background: var(--swatch);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-swatch:hover,
+.color-swatch.active {
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 3px rgba(183, 110, 76, 0.15);
+}
+
+.color-swatch.active {
+  border-color: #fff;
+  box-shadow: 0 0 0 3px rgba(183, 110, 76, 0.45);
+}
+
+.checkbox-group {
+  margin-top: 10px;
+}
+
+.checkbox-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.checkbox-item input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--accent);
+}
+
+.preview-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 18px;
+  border-radius: 20px;
+  background: linear-gradient(140deg, #f3e7de, #f9f1ea);
+  border: 1px solid var(--line);
+}
+
+.mini-board {
+  width: 100%;
+  min-height: 180px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #8d6e63, #d7a86e);
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.mini-board::before,
+.mini-board::after {
+  content: "";
+  position: absolute;
+  inset: 12% 10%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+}
+
+.mini-board::after {
+  inset: 18% 16%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.preview-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.quote-box {
+  margin-top: 20px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px 20px;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 6px;
+}
+
+.currency {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+#totalPrice {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  line-height: 1;
+}
+
+#quoteSummary {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.details-panel {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.instructions-box,
+.materials-box {
+  padding: 10px 2px;
+}
+
+ol,
+ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+li + li {
+  margin-top: 6px;
+}
+
+@media (max-width: 760px) {
+  .app-grid,
+  .details-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .preview-card {
+    grid-template-columns: 1fr;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+}
