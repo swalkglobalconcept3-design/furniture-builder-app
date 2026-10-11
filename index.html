@@ -3,24 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Furniture Builder</title>
+    <title>Maison Atelier | Furniture Builder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="page-shell">
+    <div class="site-shell">
       <header class="topbar">
-        <div>
-          <p class="eyebrow">Custom furniture studio</p>
-          <h1>Furniture Builder Planner</h1>
+        <div class="brand-wrap">
+          <div class="brand-mark">M</div>
+          <div>
+            <p class="brand-name">Maison Atelier</p>
+            <span class="brand-tag">Custom furniture studio</span>
+          </div>
         </div>
+
+        <nav class="nav">
+          <a href="#planner">Planner</a>
+          <a href="#build-guide">Build guide</a>
+          <a href="#quote">Quote</a>
+        </nav>
+
+        <button class="nav-button">Book consultation</button>
       </header>
 
-      <main class="app-grid">
-        <section class="panel config-panel">
-          <h2>Design your piece</h2>
+      <main class="hero-panel" id="planner">
+        <div class="hero-copy">
+          <p class="kicker">Bespoke wood design</p>
+          <h1>Design furniture that fits your space perfectly.</h1>
+          <p class="subtitle">
+            Choose finishing, measurements, and installation details to create a custom piece that matches your home and budget.
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-card">
+            <div class="mini-room">
+              <div class="room-wall"></div>
+              <div class="furniture-figure" id="heroFurniture"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <section class="workspace">
+        <aside class="panel config-panel">
+          <div class="panel-header">
+            <h2>Furniture planner</h2>
+            <span class="chip">Live estimate</span>
+          </div>
 
           <div class="field-group">
             <label for="furnitureType">Furniture type</label>
@@ -56,18 +89,18 @@
 
           <div class="field-row">
             <div class="field-group">
-              <label for="width">Width (cm)</label>
+              <label for="width">Width</label>
               <input id="width" type="number" min="20" max="300" value="120" />
             </div>
             <div class="field-group">
-              <label for="height">Height (cm)</label>
+              <label for="height">Height</label>
               <input id="height" type="number" min="20" max="260" value="75" />
             </div>
           </div>
 
           <div class="field-row">
             <div class="field-group">
-              <label for="depth">Depth (cm)</label>
+              <label for="depth">Depth</label>
               <input id="depth" type="number" min="20" max="150" value="45" />
             </div>
             <div class="field-group">
@@ -76,7 +109,7 @@
             </div>
           </div>
 
-          <div class="field-group checkbox-group">
+          <div class="checkbox-group">
             <label class="checkbox-item">
               <input id="drawerOption" type="checkbox" />
               <span>Drawers</span>
@@ -90,45 +123,50 @@
               <span>Premium finish</span>
             </label>
           </div>
-        </section>
+        </aside>
 
-        <section class="panel preview-panel">
-          <div class="preview-card" id="previewCard">
-            <div class="mini-board" id="boardPreview"></div>
-            <div class="preview-details">
-              <div>
-                <p class="label">Selected furniture</p>
-                <h3 id="selectedFurniture">Study Desk</h3>
-              </div>
-              <div>
-                <p class="label">Board color</p>
-                <p id="selectedColor">Walnut Brown</p>
-              </div>
-              <div>
-                <p class="label">Dimensions</p>
-                <p id="dimensionsText">120 × 75 × 45 cm</p>
+        <section class="panel output-panel" id="quote">
+          <div class="preview-card">
+            <div class="board-panel">
+              <div class="board-visual" id="boardPreview"></div>
+            </div>
+
+            <div class="summary-block">
+              <p class="summary-label">Selected piece</p>
+              <h3 id="selectedFurniture">Study Desk</h3>
+              <div class="meta-list">
+                <div>
+                  <span class="meta-label">Finish</span>
+                  <p id="selectedColor">Walnut Brown</p>
+                </div>
+                <div>
+                  <span class="meta-label">Dimension</span>
+                  <p id="dimensionsText">120 × 75 × 45 cm</p>
+                </div>
               </div>
             </div>
           </div>
 
           <div class="quote-box">
-            <p class="label">Estimated quotation</p>
-            <div class="price-row">
-              <span class="currency">USD</span>
-              <strong id="totalPrice">$0</strong>
+            <div>
+              <p class="summary-label">Estimated quotation</p>
+              <div class="price-line">
+                <span class="currency">USD</span>
+                <h2 id="totalPrice">$0</h2>
+              </div>
             </div>
             <p id="quoteSummary">Your custom quotation will appear here.</p>
           </div>
         </section>
-      </main>
+      </section>
 
-      <section class="panel details-panel">
-        <div class="instructions-box">
-          <h2>How to build</h2>
+      <section class="bottom-grid" id="build-guide">
+        <div class="panel guide-panel">
+          <h2>Build guide</h2>
           <ol id="buildSteps"></ol>
         </div>
 
-        <div class="materials-box">
+        <div class="panel material-panel">
           <h2>Material notes</h2>
           <ul id="materialInfo"></ul>
         </div>
